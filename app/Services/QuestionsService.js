@@ -1,12 +1,20 @@
+import { appState } from '../AppState.js';
+import { Question } from '../Models/Question.js';
 import { trivia_api } from './AxiosService.js'
+
+
 class QuestionsService{
 
   async getQuestions(){
     const res = await trivia_api.get('/api.php?amount=15&type=multiple')
-    console.log('what the heck is the ', res.data);
-    const charactersIWant = res.data.filter(c => c.image).map(c => new Character(c))
-    console.log({charactersIWant})
-    appState.characters = charactersIWant
+    const questions = res.data.results.map(c => new Question(c))
+    appState.questions = questions
+  }
+
+  getRandomQuestion(){
+    randomIndex = Math.floor(Math.random() * appState.questions.length)
+    appState.question =  appState.questions[randomIndex]
+    appState.questions.splice(randomIndex, 1)
   }
 
 }
