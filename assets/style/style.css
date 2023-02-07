@@ -1,0 +1,17 @@
+/* BASIC STYLES HERE */
+p{
+  margin: 0;
+}
+
+#question-row{
+  margin-top: 20vh;
+}
+
+button{
+  width: 90%;
+  height: 80px;
+}
+
+#answer-btn{
+  font-size: .8em;
+}
