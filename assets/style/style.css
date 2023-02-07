@@ -15,3 +15,11 @@ button{
 #answer-btn{
   font-size: .8em;
 }
+
+#question-div{
+  font-family: 'Amatic SC', cursive;
+}
+
+#answer-btns-div{
+  font-family: 'Gloria Hallelujah', cursive;
+}
